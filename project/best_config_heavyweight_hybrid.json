@@ -1,0 +1,23 @@
+{
+  "problem": {
+    "lp_file": "31bonds/docplex-bin-avgonly-nocplexvars.lp"
+  },
+  "quantum_circuit": {
+    "ansatz": "TwoLocal",
+    "ansatz_params": {
+      "reps": 2,
+      "entanglement": "full"
+    },
+    "shots": 1024
+  },
+  "optimization": {
+    "optimizer": "nft",
+    "alpha": 0.1,
+    "theta_initial": "piby3",
+    "theta_threshold": null
+  },
+  "hybrid": {
+    "use_local_search": true,
+    "local_search_doe": null
+  }
+}
