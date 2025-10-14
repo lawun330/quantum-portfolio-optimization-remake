@@ -46,29 +46,6 @@ To answer these questions, we designed four distinct quantum configurations that
 3. **Heavyweight Quantum**: TwoLocal ansatz with full entanglement (low reps)
 4. **Heavyweight Hybrid**: TwoLocal ansatz with full entanglement + Local Search (low reps)
 
-## 📁 Project Structure
-
-```
-root/
-├── 📊 data/                        # Problem datasets (Vanguard)
-└── 📁 misc/                        # Miscellaneous files (Vanguard)
-├── 📋 project/                     # Main project directory (NaiveQuantum)
-├── 🔧 src/                         # Source code (Vanguard)
-│   └── 🏗️ sbo/                     # Sampling-Based Optimization framework (Vanguard)
-```
-
-## 🛠️ Technologies Used
-
-- **Quantum Framework**: Qiskit
-- **Optimization**: VQE
-- **Risk Measure**: CVaR
-- **Backend**: AerSimulator
-    - GPU acceleration is not feasible for this project due to current Qiskit AerSimulator limitations. According to the [official Qiskit documentation](https://qiskit.github.io/qiskit-aer/stubs/qiskit_aer.AerSimulator.html), the `matrix_product_state` method (required for 31-qubit problems) does not support GPU.
-- **Problem Formulation**: QUBO transformation
-- **Post-processing**: Local Search optimization
-
-***
-
 ## ⚙️ Technical Implementations
 
 Our approach uses a QUBO (Quadratic Unconstrained Binary Optimization) formulation that transforms the original linear programming (LP) problem into a format suitable for VQAs. The conversion process involves constraint handling and objective function reformulation to ensure effective quantum algorithm exploration.
@@ -98,6 +75,50 @@ Local Search is a post-processing technique that performs classical optimization
 - **Bit-flip optimization**: Systematically testing single-bit changes
 - **Local neighborhood search**: Exploring nearby solutions
 - **Classical refinement**: Using classical methods to polish quantum results
+
+***
+
+## 📁 Project Structure
+
+```
+root/
+├── 📊 data/                        # Problem datasets (Vanguard)
+└── 📁 misc/                        # Miscellaneous files (Vanguard)
+├── 📋 project/                     # Main project directory (NaiveQuantum)
+├── 🔧 src/                         # Source code (Vanguard)
+│   └── 🏗️ sbo/                     # Sampling-Based Optimization framework (Vanguard)
+```
+
+## 🛠️ Technologies Used
+
+- **Quantum Framework**: Qiskit
+- **Optimization**: VQE
+- **Risk Measure**: CVaR
+- **Backend**: AerSimulator
+    - GPU acceleration is not feasible for this project due to current Qiskit AerSimulator limitations. According to the [official Qiskit documentation](https://qiskit.github.io/qiskit-aer/stubs/qiskit_aer.AerSimulator.html), the `matrix_product_state` method (required for 31-qubit problems) does not support GPU.
+- **Problem Formulation**: QUBO transformation
+- **Post-processing**: Local Search optimization
+
+## 🚀 Setup
+
+1. Clone the repository
+2. Create virtual environment
+```console
+conda env create -f conda_environment.yaml
+```
+or
+```console
+python -m venv VQE_vanguard_womanium_wiser_2025
+pip install -r requirements.txt
+```
+3. Activate the environment
+```console
+conda activate VQE_vanguard_womanium_wiser_2025
+```
+or
+```console
+.\VQE_vanguard_womanium_wiser_2025\Scripts\activate
+```
 
 ***
 
