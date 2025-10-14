@@ -63,6 +63,7 @@ root/
 - **Optimization**: VQE
 - **Risk Measure**: CVaR
 - **Backend**: AerSimulator
+    - GPU acceleration is not feasible for this project due to current Qiskit AerSimulator limitations. According to the [official Qiskit documentation](https://qiskit.github.io/qiskit-aer/stubs/qiskit_aer.AerSimulator.html), the `matrix_product_state` method (required for 31-qubit problems) does not support GPU.
 - **Problem Formulation**: QUBO transformation
 - **Post-processing**: Local Search optimization
 
