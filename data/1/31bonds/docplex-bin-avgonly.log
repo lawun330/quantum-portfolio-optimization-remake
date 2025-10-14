@@ -1,0 +1,70 @@
+CPLEX> opt
+Version identifier: 22.1.1.0 | 2022-11-28 | 9160aff4d
+Tried aggregator 1 time.
+MIQP Presolve eliminated 8 rows and 0 columns.
+MIQP Presolve modified 16 coefficients.
+Reduced MIQP has 10 rows, 34 columns, and 139 nonzeros.
+Reduced MIQP has 31 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Reduced MIQP objective Q matrix has 3 nonzeros.
+Presolve time = 0.00 sec. (0.17 ticks)
+Probing fixed 0 vars, tightened 1 bounds.
+Probing time = 0.00 sec. (0.01 ticks)
+Cover probing fixed 0 vars, tightened 1 bounds.
+Tried aggregator 1 time.
+Reduced MIQP has 10 rows, 34 columns, and 139 nonzeros.
+Reduced MIQP has 31 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Reduced MIQP objective Q matrix has 3 nonzeros.
+Presolve time = 0.00 sec. (0.08 ticks)
+Classifier predicts products in MIQP should be linearized.
+Probing time = 0.00 sec. (0.01 ticks)
+Clique table members: 5.
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: deterministic, using up to 10 threads.
+Root relaxation solution time = 0.01 sec. (0.25 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+      0     0       40.2577     3                     40.2577        9         
+*     0+    0                           88.8894       40.2577            54.71%
+*     0+    0                           64.9968       40.2577            38.06%
+      0     0       40.2577     5       64.9968       Cuts: 3       13   38.06%
+*     0+    0                           50.1615       40.2577            19.74%
+      0     0       40.2577     6       50.1615    GUBcuts: 1       17   19.74%
+*     0+    0                           50.1615       40.2577            19.74%
+*     0+    0                           45.4318       40.2577            11.39%
+      0     2       40.2577     6       45.4318       40.2577       17   11.39%
+Elapsed time = 0.03 sec. (1.77 ticks, tree = 0.02 MB, solutions = 4)
+*     2+    1                           45.4318       40.2577            11.39%
+*    18+   10                           43.9115       40.2577             8.32%
+*   149    26      integral     0       42.9485       40.2577      106    6.27%
+*   222+   24                           41.9851       40.2577             4.11%
+*   252    40      integral     0       41.2425       40.2577      194    2.39%
+*   286    27      integral     0       40.6498       40.2577      161    0.96%
+*   456    83      integral     0       40.4597       40.2577      488    0.50%
+*  1152   119      integral     0       40.4407       40.2577     1373    0.45%
+*  2362   247      integral     0       40.3463       40.2577     4334    0.22%
+*  5041   124      integral     0       40.3199       40.2577    10638    0.15%
+*  5402   103      integral     0       40.3089       40.2577    11134    0.13%
+*  5664    50      integral     0       40.3028       40.2822    12569    0.05%
+*  5776    61      integral     0       40.2939       40.2822    12622    0.03%
+
+GUB cover cuts applied:  1
+Cover cuts applied:  76
+Mixed integer rounding cuts applied:  1
+
+Root node processing (before b&c):
+  Real time             =    0.03 sec. (1.73 ticks)
+Parallel b&c, 10 threads:
+  Real time             =    0.08 sec. (122.16 ticks)
+  Sync time (average)   =    0.03 sec.
+  Wait time (average)   =    0.00 sec.
+                          ------------
+Total (root+branch&cut) =    0.11 sec. (123.89 ticks)
+
+Solution pool: 24 solutions saved.
+
+MIP - Integer optimal solution:  Objective =  4.0293929359e+01
+Solution time =    0.12 sec.  Iterations = 15439  Nodes = 6754
+Deterministic time = 123.89 ticks  (1061.44 ticks/sec)
