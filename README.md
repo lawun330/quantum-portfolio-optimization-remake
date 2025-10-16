@@ -83,9 +83,9 @@ Our approach uses a QUBO (Quadratic Unconstrained Binary Optimization) formulati
 
 ## ⚛️🖥️ PART B. Extended Research Focus: Real Quantum Hardware
 
-- **Real Hardware Performance**: How does execution time on real quantum hardware compare to classical simulation?
-- **QPU Error Impact**: To what extent do solution differences between real quantum hardware and simulation reflect quantum noise and errors?
-- **Feasibility**: Based on performance and error impact findings, is real quantum hardware currently feasible for portfolio optimization?
+1. **Real Hardware Performance**: How does execution time on real quantum hardware compare to classical simulation?
+2. **QPU Error Impact**: To what extent do solution differences between real quantum hardware and simulation reflect quantum noise and errors?
+3. **Feasibility**: Based on performance and error impact findings, is real quantum hardware currently feasible for portfolio optimization?
 
 ### ⚡ Two Approaches
 
