@@ -4,14 +4,14 @@
 
 This repository is a **remake** of the original project, independently developed by me as part of my continuous learning and improvement efforts. While this version includes significant modifications, enhancements, and reanalysis, the original project was a collaborative team effort, with *Aung Phone Kyaw* contributing alongside me.
 
-**Credits**: 
+**Credits**:
 - **Remake Project**: Developed by *La Wun Nannda*
 - **Original Project**: Developed by the *NaiveQuantum* team
 - **Original Project Repository**: [click here](https://github.com/lawun330/WISER_Optimization_VG/)
 
 This remake represents my own work and contributions while honoring the collaborative foundation of the original project.
 
-## 👥 Team 
+## 👥 Team
 
 Name: **NaiveQuantum**
 
