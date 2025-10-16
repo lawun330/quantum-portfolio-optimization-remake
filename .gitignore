@@ -130,3 +130,4 @@ venv.bak/
 .stestr/
 
 # project-specific ignores
+apikey.json
