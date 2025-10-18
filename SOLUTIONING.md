@@ -5,8 +5,7 @@ This document explains, step by step, how the mathematical formulation of the po
 ## 1. Mathematical Objective
 
 - The goal is to construct a portfolio whose characteristics match target values as closely as possible.
-- A common quadratic form for this optimization problem is:
-  $$\min \sum_{\ell\in L} \sum_{j\in J} \rho_j \big( \sum_{c\in K_\ell} \beta_{c,j} x_c - K^{\text{target}}_{\ell,j} \big)^2$$
+- A common quadratic form for this optimization problem is: $$\min \sum_{\ell\in L} \sum_{j\in J} \rho_j \big( \sum_{c\in K_\ell} \beta_{c,j} x_c - K^{\text{target}}_{\ell,j} \big)^2$$
 - Decision variables $x_c \in \{0,1\}$ represent whether each bond is included in the portfolio or not.
 - The quadratic terms encode interactions between bonds, such as correlations and covariances.
 
@@ -144,3 +143,49 @@ This document explains, step by step, how the mathematical formulation of the po
 $$\text{Total quantum measurements (rough estimate)} = \texttt{shots per iteration} \times \texttt{iterations per epoch} \times \texttt{max epoch}$$
 
 ***
+
+## Navigation Guide
+
+### Vanguard Problem Setup
+
+- **Dataset**: `data/1/31bonds/docplex-bin-avgonly-nocplexvars.lp` (31 bonds)
+    - **Bond ID Location**: Column D in Excel dataset contains bond IDs
+- **Problem**: Portfolio optimization with risk group targeting
+    - **Formula**: $$\min \sum_{\ell\in L} \sum_{j\in J} \rho_j \big( \sum_{c\in K_\ell} \beta_{c,j} x_c - K^{\text{target}}_{\ell,j} \big)^2$$
+    - **Bonds**: Each bond `c` is held in the portfolio at amount `x_c ∈ {0,1}` (binary decision)
+    - **Risk Groups**: Each bond `c` belongs to at least one risk group (category) `l`
+    - **Characteristics**: Each characteristic `j` is a fixed property of a bond that influences the outcome
+    - **Targets**: Each risk group `l` has specific target values for all characteristics
+    - **Objective**: Specify `x_c` in the portfolio to match each risk group's characteristics to target values
+    - **Constraints**: Portfolio capacity is specified manually
+
+### Vanguard Source Code Organization
+
+```
+root/src/
+├── experiment.py: Data management, dataclasses, result storage, loading, etc.
+├── plots.py: Visualization and analysis
+├── runner.py: Wrapper class for serverless execution
+├── serverless_runner.py: Serverless execution entry point
+├── step_1.py: Problem conversion (LP to quantum) and quantum circuit setup
+└── sbo/
+    ├── constants.py: Configuration constants
+    ├── version.py: Version information
+    ├── _converters/: Quantum-ready problem transformations (general format → QUBO format)
+    ├── _problems/: Problem definitions and constraints (math → CS)
+    ├── _translators/: Format interoperability layer (Docplex/Ising ↔ quadratic)
+    ├── optimizer/: Optimization algorithms and monitoring
+    ├── patterns/: Building blocks for optimization workflows
+    │   ├── building_blocks/: The actual workflow steps
+    │   └── functions/: Optimization function
+    └── utils/: Utility functions
+```
+
+### Vanguard Experimental Parameters
+
+- **Ansatz Types**: TwoLocal, BFCD, BFCD-R
+- **Entanglements**: Full, Bilinear, Color
+- **Repetitions**: 1, 2, 3 reps
+- **Problem Sizes**: 31, 109, 155 qubits
+- **Devices**: AerSimulator, IBM Kyiv, IBM Marrakesh, IBM Fez
+- **Alpha Values**: 0.1, 0.15, 0.2
