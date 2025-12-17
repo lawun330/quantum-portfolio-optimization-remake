@@ -83,10 +83,8 @@ Our approach uses a QUBO (Quadratic Unconstrained Binary Optimization) formulati
 
 ## ⚛️🖥️ PART B. Extended Research Focus: Real Quantum Hardware
 
-1. **Time Efficiency**: (placeholder)?
-2. **Computational Resource**: (placeholder)?
-3. **Solution Quality**: How do solution quality differences between real quantum hardware and simulations compare?
-4. **Feasibility**: Based on performance and error impact findings, is real quantum hardware currently feasible for portfolio optimization?
+1. **Real Hardware Performance**: How does real quantum hardware performance compare to classical simulation in terms of execution time, computational resource requirements, and solution quality?
+2. **Feasibility**: Based on the findings, is real quantum hardware currently feasible for portfolio optimization?
 
 ### ⚡ Two Approaches
 
@@ -194,8 +192,9 @@ or
 
 ### PART B. Extended Research: AerSimulator vs. Real Quantum Hardware
 
-- **Execution Time**: (placeholder)
-- **Computational Cost**: (placeholder)
+- **Solution Quality**: The solutions are quite similar (Hamming distance differs by one bit position; the relative difference is approximately 12.1%)
+- **Execution Time**: QPU execution is approximately 53.61 times slower overall (AerSimulator CPU: 29.56 seconds; IBM QPU: 1584.84 seconds, or 26.41 minutes)
+- **Computational Cost**: Both approaches use the same number of function evaluations (242)
 
 ## 🎯 Conclusions
 
@@ -209,9 +208,7 @@ The **heavyweight hybrid** configuration emerged as the optimal choice.
 
 ### PART B. Extended Research: AerSimulator vs. Real Quantum Hardware
 
-The **heavyweight hybrid** configuration is adjusted to fit the 10-minute monthly limit of IBM's free-tier real quantum hardware. (placeholder)
-
-We are optimistic about the future of quantum portfolio optimization, especially with recent advancements in quantum hardware, like tunable couplers in the Ankaa architecture (Mutus, 2025). These developments simplify the implementation of fully entangled circuits, such as the two-local full entanglement ansatz, making them more feasible on real quantum hardware.
+The **heavyweight hybrid** configuration is adjusted to fit the 10-minute monthly limit of IBM's free-tier real quantum hardware. The execution time on real hardware exceeds that of the simulation by more than 50× and is therefore currently infeasible. However, we are optimistic about the future of quantum portfolio optimization, especially with recent advancements in quantum hardware, like tunable couplers in the Ankaa architecture (Mutus, 2025). These developments simplify the implementation of fully entangled circuits, such as the two-local full entanglement ansatz, making them more feasible on real quantum hardware.
 
 ***
 
